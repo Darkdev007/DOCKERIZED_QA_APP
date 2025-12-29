@@ -1,8 +1,18 @@
 from fastapi import FastAPI, Request, Query, HTTPException
 from app.model import answer_question
 from app.utils import clean_text, validate_inputs, format_response
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
+
+#Allow requests from any origin (for testing)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # allows all origins restrict later
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.post("/ask")
 async def ask(
