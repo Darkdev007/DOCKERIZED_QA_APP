@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+transformers
+torch==2.2.2
+pydantic
+numpy==1.24.4
