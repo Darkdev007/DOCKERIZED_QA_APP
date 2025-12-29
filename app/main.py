@@ -33,5 +33,5 @@ async def ask(
         result = answer_question(question, context)
         return format_response(result)
 
-    except ValueError as e:
-        raise HTTPException(status_code=400, detail=str(e))
+    except ValueError as c:
+        raise HTTPException(status_code=400, detail=str(c))
